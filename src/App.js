@@ -31,7 +31,7 @@ class App extends React.Component {
           <tr>
             <th>Menampilkan</th>
             <th>20 teratas dengan index genap. </th>
-            <th>Apakah sesuai ?</th>
+            <th>Apakah sesuai ? (Masih Bingung Bro...)</th>
           </tr>
           {this.state.data.map((item, index) => {
           let isCompleted = item.completed ? "Sudah selesai" : "Belum selesai";
