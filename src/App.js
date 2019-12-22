@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   fetchData = () => {
-    axios.get('https://jsonplaceholder.typicode.com/todos/')
+    axios.get('http://dummy.restapiexample.com/api/v1/employees')
       .then(res => {
         this.setState({
           data: res.data
@@ -29,18 +29,20 @@ class App extends React.Component {
       <div className="container">
         <table>
           <tr>
-            <th>Nomor</th>
-            <th>Nama Perintah</th>
-            <th>Apakah Selesai ?</th>
+            <th>Menampilkan</th>
+            <th>20 teratas dengan index genap. </th>
+            <th>Apakah sesuai ?</th>
           </tr>
           {this.state.data.map((item, index) => {
           let isCompleted = item.completed ? "Sudah selesai" : "Belum selesai";
   
-          if (item.id < 10){
+          if (item.id <= 20){
             return(
               <tr>
                 <td>{item.id}</td>
-                <td>{item.title}</td>
+                <td>{item.employee_name}</td>
+                <td>{item.employee_salary}</td>
+                <td>{item.employee_age}</td>
                 <td>{isCompleted}</td>
               </tr>
             )
